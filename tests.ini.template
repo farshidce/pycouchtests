@@ -1,5 +1,8 @@
 [test-params]
-number_of_items:100
+#these params are now used for longevity tests
+number_of_items:1000
+#-1 : means that the test will only run once.
+#120 : means that the test will run for at least 120 seconds
 duration:-1
 
 [couchdb-local]
