@@ -68,6 +68,7 @@ class CrudLongevityTests(unittest.TestCase):
         src_db = self.server[db_name]
         for doc in docs:
             src_db.save_doc(doc)
+        log.info("inserted {0} items".format(number_of_items))
 
     def _update_data(self, number_of_items, db_name):
         docs = DocumentGenerator.make_docs(number_of_items,
@@ -76,6 +77,7 @@ class CrudLongevityTests(unittest.TestCase):
         src_db = self.server[db_name]
         for doc in docs:
             src_db.save_doc(doc, force_update=True)
+        log.info("updated {0} items".format(number_of_items))
 
 
     def _delete_data(self, docs, db_name):

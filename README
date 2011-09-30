@@ -1,0 +1,40 @@
+* Requirements:
+
+1- couchdbkit (http://couchdbkit.org/)
+git clone http://github.com/benoitc/couchdbkit.git
+sudo python setup.py install
+2- nosetests
+sudo easy_install nosetests
+3- nosetests nose-testconfig plugin
+sudo pip install nose-testconfig
+
+* Test Config File:
+the tests.ini.template file contains the ip:port and other parameters used by different test cases
+
+you need to create your custom test.ini file with relevant ip:port information and test parameters
+
+* Usage:
+for instance to run all the tests in src\abc.py you can run
+
+nosetests src/basics.py --tc-file=tests.ini
+
+if you need to override any of the existing parameters in the test
+
+nosetests src/basics.crudlongevity.py --tc-file=tests.ini --tc=test-params.number_of_items:10000
+
+* Test Report:
+
+nosetests src/basics.py --tc-file=tests.ini.template
+............F.
+======================================================================
+FAIL: test_reduceonekey (basics.BasicTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/space/git/pycouchtests/src/basics.py", line 203, in test_reduceonekey
+    tools.eq_(results.total_rows, 1)
+  File "/Library/Python/2.7/site-packages/nose-1.1.2-py2.7.egg/nose/tools.py", line 31, in eq_
+    assert a == b, msg or "%r != %r" % (a, b)
+AssertionError: None != 1
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.283s

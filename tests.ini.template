@@ -1,18 +1,17 @@
 [test-params]
-number_of_items:100000
+number_of_items:100
 duration:-1
-
 
 [couchdb-local]
 ip:localhost
 port:5984
 
+#couchdb-remote-1 is used for replication tests
 [couchdb-remote-1]
-ip:172.16.75.136
-#ip:localhost
+ip:172.16.75.130
 port:5984
 
+#couchdb-remote-2 is used for replication tests
 [couchdb-remote-2]
-#ip:localhost
 ip:172.16.75.136
 port:5984

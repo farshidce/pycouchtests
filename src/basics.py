@@ -14,7 +14,6 @@ class BasicTests(unittest.TestCase):
         node = config['couchdb-local']
         self.log = logger.logger("basictests")
         url = "http://{0}:{1}/".format(node['ip'], node['port'])
-        self.log.info("connecting to couchdb @ {0}".format(url))
         self.server = client.Server(url, full_commit=False)
         self.node = node
 
