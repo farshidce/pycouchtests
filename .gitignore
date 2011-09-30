@@ -1,0 +1,9 @@
+#*
+*.pyc
+*~
+*.DS_*
+*.idea
+*.log
+*tmp-
+tmp-*
+tmp
