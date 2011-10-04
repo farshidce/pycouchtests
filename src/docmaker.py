@@ -39,7 +39,7 @@ class GeneratedDocuments(object):
             raise StopIteration
         else:
             i = self._pointer
-            doc = {"_id": "{0}".format(i)}
+            doc = {"_id": "{0}-{1}".format(i, self._options["seed"])}
             for k in self._kv_template:
                 v = self._kv_template[k]
                 if isinstance(v, str) and v.find("${prefix}") != -1:
